@@ -1,0 +1,33 @@
+REQUIRED IMAGES FOR THE WEBSITE
+
+Please add the following images to complete the website:
+
+1. cleartube-logo.png
+   - Size: 40x40 or larger (square format recommended)
+   - Description: The ClearTube app logo
+
+2. app-showcase.png
+   - Size: At least 500px width, high resolution
+   - Description: A mockup of the app running on a phone, showing the home screen or video player
+   
+3. screenshot-1.png through screenshot-4.png
+   - Size: At least 250px width, consistent aspect ratio
+   - Description: Screenshots of different screens in the app
+     * screenshot-1.png: Home screen
+     * screenshot-2.png: Video player
+     * screenshot-3.png: Downloads section
+     * screenshot-4.png: Settings
+
+4. download-qr.png
+   - Size: 150x150
+   - Description: QR code that leads to the download page or APK
+
+You can generate a QR code for free at:
+- https://www.qr-code-generator.com/
+- https://www.the-qrcode-generator.com/
+- https://www.qrcode-monkey.com/
+
+For app mockups, you can use:
+- https://mockuphone.com/
+- https://deviceshots.com/
+- https://smartmockups.com/ 
