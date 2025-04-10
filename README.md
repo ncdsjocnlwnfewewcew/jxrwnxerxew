@@ -70,4 +70,4 @@ To complete the website, you'll need to capture these screenshots from the Clear
 
 ## License
 
-This website is open-source and available under the same license as the ClearTube app. 
+This website is open-source and available under the same license as the ClearTube app which is GPL3
