@@ -1,0 +1,191 @@
+/* Specific styles for legal pages */
+.legal-content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem;
+    line-height: 1.7;
+}
+
+.legal-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.legal-content h2 {
+    font-size: 1.8rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: var(--secondary-color);
+    border-bottom: 1px solid var(--light-gray);
+    padding-bottom: 0.5rem;
+}
+
+.legal-content h3 {
+    font-size: 1.4rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.legal-content p {
+    margin-bottom: 1rem;
+}
+
+.legal-content ul, 
+.legal-content ol {
+    margin-left: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.legal-content li {
+    margin-bottom: 0.5rem;
+}
+
+.legal-content a {
+    text-decoration: underline;
+}
+
+.legal-content section {
+    margin-bottom: 2.5rem;
+    padding: 0;
+}
+
+.last-updated {
+    font-style: italic;
+    color: #777;
+    margin-bottom: 2rem;
+}
+
+/* License summary styling */
+.license-summary {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.license-summary h3 {
+    width: 100%;
+    border-bottom: 1px solid var(--light-gray);
+    padding-bottom: 0.5rem;
+}
+
+.license-summary ul {
+    margin-left: 0;
+    list-style: none;
+}
+
+.license-summary li {
+    display: flex;
+    align-items: center;
+}
+
+.license-summary i {
+    margin-right: 0.5rem;
+    width: 20px;
+    text-align: center;
+}
+
+.license-summary .fa-check {
+    color: #4CAF50;
+}
+
+.license-summary .fa-times {
+    color: #F44336;
+}
+
+.license-summary .fa-exclamation-circle {
+    color: #FF9800;
+}
+
+/* License preview styling */
+.license-preview {
+    background-color: #f5f5f5;
+    border: 1px solid var(--light-gray);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.license-preview pre {
+    font-family: monospace;
+    white-space: pre-wrap;
+    margin: 0;
+    line-height: 1.5;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* Libraries list styling */
+.libraries-list {
+    list-style: none;
+    margin-left: 0;
+}
+
+.libraries-list li {
+    border-bottom: 1px solid var(--light-gray);
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+}
+
+.libraries-list li:last-child {
+    border-bottom: none;
+}
+
+.libraries-list p {
+    margin-bottom: 0.5rem;
+}
+
+/* Credits section styling */
+#credits {
+    background-color: #f5f5f5;
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    text-align: center;
+}
+
+.accent-button {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 0.8rem 1.5rem;
+    border-radius: var(--border-radius);
+    margin-top: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.accent-button:hover {
+    background-color: var(--primary-dark);
+    color: var(--white);
+    transform: translateY(-2px);
+}
+
+.accent-button i {
+    margin-right: 0.5rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .legal-content h1 {
+        font-size: 2rem;
+    }
+    
+    .legal-content h2 {
+        font-size: 1.5rem;
+    }
+    
+    .legal-content h3 {
+        font-size: 1.2rem;
+    }
+    
+    .license-summary {
+        flex-direction: column;
+    }
+} 
