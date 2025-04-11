@@ -1,0 +1,29 @@
+User-agent: *
+Allow: /
+Allow: /index.html
+Allow: /css/
+Allow: /js/
+Allow: /images/
+Allow: /legal/
+Disallow: /ClearTube.apk
+Disallow: /*.DS_Store$
+Disallow: /*.log$
+Disallow: /*.md$
+Disallow: /README*
+Disallow: /.git/
+
+# Specific search engine instructions
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+# Crawl delay for bots to prevent server overload
+Crawl-delay: 1
+
+# Sitemap location
+Sitemap: https://cleartube.app/sitemap.xml 

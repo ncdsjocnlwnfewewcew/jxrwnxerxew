@@ -17,15 +17,50 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Mobile navigation toggle (to be implemented if needed)
-    // const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
-    // const navLinks = document.querySelector('.nav-links');
+    // Implement lazy loading for images to improve performance
+    if ('loading' in HTMLImageElement.prototype) {
+        // Browser supports native lazy loading
+        const lazyImages = document.querySelectorAll('img:not(.logo img)');
+        lazyImages.forEach(img => {
+            img.setAttribute('loading', 'lazy');
+        });
+    } else {
+        // Fallback for browsers that don't support native lazy loading
+        const lazyImages = document.querySelectorAll('img:not(.logo img)');
+        
+        const lazyLoadObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.src = img.dataset.src;
+                    observer.unobserve(img);
+                }
+            });
+        });
+        
+        lazyImages.forEach(img => {
+            lazyLoadObserver.observe(img);
+        });
+    }
+
+    // Mobile navigation toggle
+    const mobileNavToggle = document.createElement('button');
+    mobileNavToggle.classList.add('mobile-nav-toggle');
+    mobileNavToggle.innerHTML = '<i class="fas fa-bars"></i>';
+    mobileNavToggle.setAttribute('aria-label', 'Toggle navigation menu');
     
-    // if (mobileNavToggle) {
-    //     mobileNavToggle.addEventListener('click', () => {
-    //         navLinks.classList.toggle('active');
-    //     });
-    // }
+    const nav = document.querySelector('nav');
+    const navLinks = document.querySelector('.nav-links');
+    
+    if (nav && navLinks) {
+        nav.insertBefore(mobileNavToggle, navLinks);
+        
+        mobileNavToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const expanded = mobileNavToggle.getAttribute('aria-expanded') === 'true' || false;
+            mobileNavToggle.setAttribute('aria-expanded', !expanded);
+        });
+    }
 
     // Add a scroll event listener to change the header style on scroll
     window.addEventListener('scroll', () => {
@@ -66,5 +101,46 @@ document.addEventListener('DOMContentLoaded', () => {
     const yearElement = document.querySelector('.current-year');
     if (yearElement) {
         yearElement.textContent = new Date().getFullYear();
+    }
+    
+    // Add schema.org rich snippets for FAQ
+    const faqItems = document.querySelectorAll('.faq-item');
+    if (faqItems.length > 0) {
+        const faqSchema = {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": []
+        };
+        
+        faqItems.forEach(item => {
+            const question = item.querySelector('h3').textContent;
+            const answer = item.querySelector('p').textContent;
+            
+            faqSchema.mainEntity.push({
+                "@type": "Question",
+                "name": question,
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": answer
+                }
+            });
+        });
+        
+        // Add the FAQ schema to the page
+        const faqSchemaScript = document.createElement('script');
+        faqSchemaScript.type = "application/ld+json";
+        faqSchemaScript.textContent = JSON.stringify(faqSchema);
+        document.head.appendChild(faqSchemaScript);
+    }
+
+    // Register service worker for PWA capabilities
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('/sw.js').then(registration => {
+                console.log('ServiceWorker registration successful');
+            }).catch(error => {
+                console.log('ServiceWorker registration failed: ', error);
+            });
+        });
     }
 }); 

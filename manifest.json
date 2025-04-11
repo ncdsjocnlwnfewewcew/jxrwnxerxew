@@ -1,0 +1,42 @@
+{
+  "name": "ClearTube - Ad-Free YouTube Alternative",
+  "short_name": "ClearTube",
+  "description": "Watch YouTube without ads, download videos, and play in background. Privacy-focused and free.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#E30613",
+  "theme_color": "#E30613",
+  "icons": [
+    {
+      "src": "images/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "images/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "related_applications": [
+    {
+      "platform": "play",
+      "url": "https://cleartube.app/ClearTube.apk",
+      "id": "com.cleartube.app"
+    }
+  ],
+  "prefer_related_applications": true,
+  "categories": ["video", "entertainment", "utilities"],
+  "screenshots": [
+    {
+      "src": "images/homescreen.png",
+      "sizes": "1280x720",
+      "type": "image/png"
+    },
+    {
+      "src": "images/video.png",
+      "sizes": "1280x720",
+      "type": "image/png"
+    }
+  ]
+} 
